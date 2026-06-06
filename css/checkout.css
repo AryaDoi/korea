@@ -1,0 +1,427 @@
+/* --- ROOT VARIABLES --- */
+:root {
+    --primary: #111;
+    --border: #eeeeee;
+    --bg-gray: #f9f9f9;
+    --text-muted: #888;
+    --font-main: 'Plus Jakarta Sans', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+}
+
+/* --- BASE STYLES --- */
+body {
+    font-family: var(--font-main);
+    background-color: #fff;
+    margin: 0;
+    padding-top: 100px; 
+    color: #111;
+}
+
+/* --- NAVBAR & SEARCH --- */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+/* --- EFEK RESPONSIF MENU NAVBAR --- */
+.navbar-custom-link {
+    text-decoration: none !important; 
+    color: #666666 !important; 
+    font-weight: 500 !important;
+    transition: color 0.2s ease !important; 
+}
+
+.navbar-custom-link:hover {
+    color: #000000 !important; 
+}
+
+.nav-container {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Reset Link & Warna (Mencegah Warna Ungu) */
+.logo-wrapper, .nav-menu a, .cart-btn {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+
+/* Logo Warung RMB Gedein Dikit */
+.logo a { text-decoration: none; color: inherit; }
+.logo h1 { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 1.6rem; 
+    color: #111; 
+    margin: 0;
+    line-height: 1;
+}
+.logo span { 
+    font-size: 0.6rem; 
+    color: #aaa; 
+    letter-spacing: 4px; 
+    display: block; 
+    margin-top: 2px;
+    text-transform: uppercase;
+}
+
+
+/* Menu Tengah */
+.nav-menu a {
+    color: var(--text-muted) !important;
+    margin: 0 15px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: 0.2s ease;
+}
+
+.nav-menu a:hover { 
+    color: var(--primary) !important; 
+}
+
+/* Tombol Keranjang Lonjong (Pill) */
+.cart-btn {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 8px 18px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.cart-btn:hover {
+    border-color: var(--primary);
+    background: #fcfcfc;
+}
+
+.cart-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cart-text {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.cart-badge {
+    background: var(--primary);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    min-width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+/* --- CHECKOUT LAYOUT --- */
+.checkout-container { 
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding-bottom: 50px; 
+}
+
+.checkout-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 400px; 
+    gap: 40px; 
+}
+
+/* Form Side */
+.page-title { 
+    font-size: 2rem; 
+    font-weight: 800; 
+    margin-bottom: 30px; 
+}
+
+.card { 
+    border: 1px solid var(--border); 
+    border-radius: 16px; 
+    padding: 25px; 
+    margin-bottom: 25px; 
+}
+
+.section-header { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    margin-bottom: 20px; 
+}
+
+.step-number { 
+    width: 28px; 
+    height: 28px; 
+    background: var(--primary); 
+    color: #fff; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 50%; 
+    font-size: 0.8rem; 
+    font-weight: bold; 
+}
+
+.section-header h3 { 
+    font-size: 1.1rem; 
+    margin: 0; 
+}
+
+/* Input Fields */
+.input-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+}
+
+.full-width { grid-column: span 2; }
+
+label { 
+    display: block; 
+    font-size: 0.85rem; 
+    font-weight: 600; 
+    margin-bottom: 8px; 
+    color: #444; 
+}
+
+input, select { 
+    width: 100%; 
+    padding: 12px 15px; 
+    border: 1px solid var(--border); 
+    border-radius: 10px; 
+    font-size: 0.9rem; 
+    box-sizing: border-box; 
+    outline: none; 
+    transition: 0.2s;
+}
+
+input:focus, select:focus { 
+    border-color: var(--primary); 
+}
+
+.manual-input { 
+    display: none; 
+    margin-top: 10px; 
+    border-style: dashed; 
+}
+
+/* Payment Box */
+.payment-box { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+    padding: 20px; 
+    border: 2px solid var(--primary); 
+    border-radius: 12px; 
+    background: #fff; 
+    cursor: pointer;
+}
+
+/* Ukuran titik radio button */
+.payment-box input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--primary); 
+}
+
+.payment-info strong { 
+    display: block; 
+    font-size: 0.95rem; 
+}
+
+.payment-info p { 
+    margin: 5px 0 0; 
+    font-size: 0.8rem; 
+    color: var(--text-muted); 
+}
+
+.payment-tip { 
+    margin-top: 15px; 
+    padding: 12px; 
+    background: #fffbeb; 
+    border-radius: 8px; 
+    border: 1px solid #fef3c7; 
+    color: #92400e; 
+    font-size: 0.8rem; 
+}
+
+/* --- SUMMARY SIDEBAR --- */
+.summary-card { 
+    background: #ffffff;
+    padding: 30px; 
+    border-radius: 20px; 
+    border: 1px solid var(--border); 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+}
+
+.sticky-card { 
+    position: sticky; 
+    top: 110px; 
+}
+
+.summary-card h3 { 
+    margin-top: 0; 
+    margin-bottom: 20px; 
+    font-size: 1.1rem; 
+}
+
+.items-scroll { 
+    max-height: 250px; 
+    overflow-y: auto; 
+    margin-bottom: 20px; 
+    padding-right: 5px;
+}
+
+/* Scrollbar Style */
+.items-scroll::-webkit-scrollbar { width: 4px; }
+.items-scroll::-webkit-scrollbar-thumb { background: #ddd; border-radius: 10px; }
+
+.summary-item-row { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    margin-bottom: 15px; 
+}
+
+.item-img img { 
+    width: 50px; 
+    height: 50px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    background: #eee;
+}
+
+.item-info { flex: 1; }
+.item-info strong { display: block; font-size: 0.85rem; }
+.item-info span { font-size: 0.75rem; color: var(--text-muted); }
+.item-price { font-size: 0.9rem; font-weight: 600; }
+
+.price-breakdown { 
+    border-top: 1px solid #e0e0e0; 
+    padding-top: 20px; 
+}
+
+.price-row { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 10px; 
+    font-size: 0.9rem; 
+    color: #555; 
+}
+
+.price-row.total { 
+    margin-top: 15px; 
+    color: #111; 
+    font-weight: 700; 
+}
+
+.final-price { 
+    font-size: 1.4rem; 
+}
+
+/* Buttons */
+.btn-checkout { 
+    width: 100%; 
+    background: var(--primary); 
+    color: #fff; 
+    border: none; 
+    padding: 18px; 
+    border-radius: 12px; 
+    font-weight: 700; 
+    font-size: 1rem; 
+    margin-top: 20px; 
+    cursor: pointer; 
+    transition: 0.2s ease; 
+}
+
+.btn-checkout:hover { 
+    opacity: 0.9; 
+    transform: translateY(-2px); 
+}
+
+.btn-back { 
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #666;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 10px;
+    background: #f5f5f5; 
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn-back:hover {
+    color: #111;
+    background: #eeeeee;
+    transform: translateX(-5px); 
+    border-color: #ddd;
+}
+
+.secure-footer { 
+    display: flex; 
+    justify-content: center; 
+    gap: 15px; 
+    margin-top: 20px; 
+    font-size: 0.7rem; 
+    color: #aaa; 
+}
+
+
+@media (max-width: 900px) {
+    .checkout-grid { 
+        grid-template-columns: 1fr; 
+    }
+    .summary-section { 
+        order: -1; 
+    }
+    .sticky-card {
+        position: relative;
+        top: 0;
+    }
+    .input-grid {
+        grid-template-columns: 1fr;
+    }
+    .full-width {
+        grid-column: span 1;
+    }
+    .nav-menu {
+        display: none; 
+    }
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+.main-title {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.main-title:hover {
+    opacity: 0.8;
+    transform: scale(1.02); 
+}
+

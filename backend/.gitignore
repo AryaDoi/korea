@@ -1,0 +1,16 @@
+.DS_Store
+node_modules/
+dist/
+*.log
+.env.local
+.env.*.local
+/.idea/
+/.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.wrangler/
+*.tsbuildinfo
+.cache/

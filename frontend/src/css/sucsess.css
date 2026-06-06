@@ -1,0 +1,29 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+.success-container { width: 100%; padding: 24px; }
+.success-box { background: white; border-radius: 12px; padding: 48px 24px; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.2); max-width: 500px; margin: 0 auto; }
+.success-icon { font-size: 72px; color: #51cf66; margin-bottom: 24px; animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
+@keyframes scaleIn { from { transform: scale(0); } to { transform: scale(1); } }
+.success-box h1 { font-size: 32px; color: #1a1a1a; margin-bottom: 12px; }
+.success-box p { color: #666; margin-bottom: 32px; }
+.order-info { background: #f9f9f9; padding: 24px; border-radius: 8px; margin-bottom: 32px; text-align: left; }
+.info-row { display: flex; justify-content: space-between; margin-bottom: 16px; }
+.label { font-weight: 600; color: #333; }
+.value { color: #667eea; font-weight: 700; }
+.instructions { background: #f0f0ff; padding: 24px; border-radius: 8px; margin-bottom: 32px; text-align: left; }
+.instructions h3 { font-size: 16px; margin-bottom: 12px; color: #667eea; }
+.instructions ol { margin-left: 20px; }
+.instructions li { margin-bottom: 8px; color: #333; }
+.actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn { flex: 1; min-width: 150px; display: inline-block; padding: 12px 24px; border: none; border-radius: 6px; text-decoration: none; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+.btn-primary { background: #667eea; color: white; }
+.btn-primary:hover { background: #5568d3; }
+.btn-secondary { background: white; color: #667eea; border: 2px solid #667eea; }
+.btn-secondary:hover { background: #f0f0ff; }
+@media (max-width: 768px) {
+  .success-box { padding: 32px 16px; }
+  .success-icon { font-size: 48px; }
+  .success-box h1 { font-size: 24px; }
+  .actions { flex-direction: column; }
+  .btn { width: 100%; }
+}

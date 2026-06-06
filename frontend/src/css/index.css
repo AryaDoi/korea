@@ -1,0 +1,50 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: #333; background-color: #f9f9f9; }
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.admin-secret-btn { width: 0; height: 0; }
+.logo-text { flex: 1; }
+.logo-text h1 { font-size: 24px; font-weight: 700; color: #1a1a1a; }
+.nav-links { display: flex; gap: 32px; margin: 0 24px; }
+.nav-links a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
+.nav-links a:hover { color: #ff6b6b; }
+.cart-btn { position: relative; display: flex; align-items: center; gap: 8px; text-decoration: none; color: #333; }
+.cart-count { position: absolute; top: -8px; right: -8px; background: #ff6b6b; color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+.container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+.hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 24px; text-align: center; border-radius: 12px; margin-bottom: 40px; }
+.hero h2 { font-size: 48px; margin-bottom: 16px; }
+.hero p { font-size: 18px; margin-bottom: 24px; opacity: 0.9; }
+.cta-button { display: inline-block; background: white; color: #667eea; padding: 12px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: transform 0.3s, box-shadow 0.3s; }
+.cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
+.statistics { margin-bottom: 40px; }
+.stats-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.stat-item { background: white; padding: 24px; border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.stat-item h3 { font-size: 32px; color: #667eea; margin-bottom: 8px; }
+.featured-products { margin-bottom: 40px; }
+.featured-products h2 { font-size: 28px; margin-bottom: 24px; }
+.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 24px; }
+.product-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+.product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0,0,0,0.15); }
+.product-card img { width: 100%; height: 200px; object-fit: cover; }
+.no-image { width: 100%; height: 200px; background: #e9ecef; display: flex; align-items: center; justify-content: center; color: #999; }
+.product-info { padding: 16px; }
+.product-info h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+.price { color: #667eea; font-weight: 700; font-size: 18px; margin-bottom: 12px; }
+.btn { display: inline-block; padding: 8px 16px; border: none; border-radius: 6px; text-decoration: none; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+.btn-primary { background: #667eea; color: white; }
+.btn-primary:hover { background: #5568d3; }
+.btn-secondary { background: white; color: #667eea; border: 1px solid #667eea; }
+.btn-secondary:hover { background: #f0f0ff; }
+.product-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.product-actions .btn { flex: 1; font-size: 12px; padding: 6px 8px; }
+footer { background: #1a1a1a; color: white; text-align: center; padding: 24px; margin-top: 40px; }
+.notification { position: fixed; bottom: 20px; right: 20px; padding: 16px 24px; background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 1000; animation: slideIn 0.3s ease-out; }
+.notification-success { border-left: 4px solid #51cf66; }
+.notification-error { border-left: 4px solid #ff6b6b; }
+@keyframes slideIn { from { transform: translateX(400px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@media (max-width: 768px) {
+  .navbar { flex-direction: column; gap: 16px; }
+  .nav-links { margin: 0; flex-direction: column; gap: 16px; }
+  .stats-container { grid-template-columns: 1fr; }
+  .hero h2 { font-size: 28px; }
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+}

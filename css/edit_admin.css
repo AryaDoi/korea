@@ -1,0 +1,253 @@
+/* ==========================================
+   CSS KHUSUS UNTUK TABEL EDIT DATA
+========================================== */
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+/* Container khusus form produk agar tidak lebar memanjang */
+.form-edit-produk-container {
+    max-width: 600px; /* Batasi lebar form agar rapi */
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e1e5eb;
+    margin-bottom: 2rem;
+    border-top: 4px solid #0284c7;
+}
+
+/* Membuat form input lebih kompak */
+.grid-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Membagi jadi 2 kolom */
+    gap: 15px;
+}
+
+.full-width { grid-column: span 2; } /* Untuk input yang butuh lebar penuh */
+
+/* Layout khusus agar ID dan Nama Produk sejajar dalam satu baris */
+.form-row {
+    display: grid;
+    grid-template-columns: 190px 1fr; /* Kolom ID 120px, sisanya untuk Nama */
+    gap: 15px;
+    margin-bottom: 1rem;
+}
+
+/* Penyesuaian agar tampilan tetap rapi di layar kecil */
+@media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+}
+
+/* Beri jarak antara judul Edit Produk dengan form di bawahnya */
+.form-edit-produk-container h3 {
+    margin-bottom: 25px !important; /* Menambah ruang antara judul dan input */
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e1e5eb; /* Opsional: garis pemisah agar lebih rapi */
+}
+
+/* --- CSS YANG SUDAH ADA (BIARKAN) --- */
+.card {
+    width: 100%; /* Atau pengaturan asli Anda, JANGAN diubah ke inline-block */
+    padding: 20px;
+    /* ... properti lainnya ... */
+}
+
+/* --- TAMBAHKAN CLASS BARU INI UNTUK FORM EDIT --- */
+.card-edit-kategori {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #e1e5eb;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border-top: 4px solid #0284c7;
+    width: fit-content;    /* Ini yang membuat dia tidak melebar ke kanan */
+    min-width: 400px;      /* Agar tidak terlalu kecil */
+}
+
+.card-edit-kategori .form-inline {
+    display: flex;
+    align-items: flex-end; /* Menjaga label dan input sejajar di bawah */
+    gap: 20px;            /* Memberi jarak antar kolom agar tidak mepet */
+}
+
+.card-edit-kategori .form-group {
+    display: flex;
+    flex-direction: column; /* Membuat label berada tepat di atas input */
+    margin-bottom: 0 !important;
+}
+
+/* Beri jarak antara Judul Edit Kategori dengan form di bawahnya */
+.card-edit-kategori h3 {
+    margin-bottom: 20px !important; /* Sesuaikan angka ini sesuai keinginan */
+    border-bottom: 1px solid #e1e5eb; /* Opsional: Tambahkan garis jika ingin lebih rapi */
+    padding-bottom: 10px;
+}
+
+/* Memperlebar kolom ID dan memberi sedikit ruang */
+.card-edit-kategori input[name="kategori_id"] {
+    width: 190px !important; /* ID diperlebar menjadi 120px */
+}
+
+/* Memastikan label terlihat rapi */
+.card-edit-kategori label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #374151;
+}
+
+/* Biar form-nya tetap horizontal di dalam card khusus ini */
+.form-inline {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+/* Membatasi lebar grup form agar tidak terlalu panjang */
+.form-inline .form-group {
+    margin-bottom: 0 !important;
+}
+
+/* Input ID (Lebih kecil) */
+.form-inline .form-group:first-child {
+    flex: 0 0 80px; /* Lebar tetap 80px */
+}
+
+/* Input Nama (Fleksibel tapi dibatasi) */
+.form-inline .form-group:nth-child(2) {
+    flex: 1; 
+    max-width: 300px; /* Batasi maksimal agar tidak terlalu panjang */
+}
+
+/* Input universal */
+.form-inline .form-group input {
+    width: 100%; 
+    height: 38px;
+    padding: 8px 12px;
+    box-sizing: border-box; /* Penting agar padding tidak merusak lebar */
+}
+
+/* Khusus input Readonly */
+.form-inline .form-group input[readonly] {
+    background-color: #f8fafc;
+    border: 1px solid #e1e5eb;
+}
+
+/* Area Tombol */
+.form-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 0 !important;
+    white-space: nowrap; /* Mencegah tombol turun ke bawah */
+}
+
+.data-table th, .data-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.data-table th {
+    background-color: #f9fafb;
+    font-weight: 600;
+    color: #4b5563;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Mengatur padding kolom pertama agar sejajar dengan teks header Card */
+.data-table th:first-child {
+    padding-left: 2rem;
+}
+
+.data-table td {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    vertical-align: middle;
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Tombol Aksi dalam Tabel */
+.btn-action {
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+/* Memperbaiki tinggi tombol agar sinkron dengan input */
+.btn-submit, .btn-cancel {
+    height: 38px;
+    padding: 0 20px;
+    line-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.btn-submit {
+    background-color: #0284c7;
+    color: white;
+}
+
+.btn-cancel {
+    background-color: #64748b;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-edit {
+    background-color: #e0f2fe;
+    color: #0284c7;
+}
+
+.btn-edit:hover { 
+    background-color: #bae6fd; 
+}
+
+/* Menampilkan gambar kecil di tabel */
+.table-img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+}
+
+/* Pastikan header tabel fleksibel */
+.table-header-tool { 
+    display: flex !important; 
+    justify-content: space-between !important; 
+    align-items: center !important; 
+    padding: 1rem 2rem !important; 
+    background: #f8fafc !important; 
+    border-bottom: 1px solid #e1e5eb !important; 
+}
+/* Menghilangkan margin bawaan h3 agar tidak mendorong elemen lain */
+.table-header-tool h3 { margin: 0 !important; font-size: 1.1rem; }
+
+/* Tombol Hapus Merah */
+.btn-delete {
+    background-color: #fee2e2;
+    color: #ef4444;
+    margin-left: 0.5rem;
+}
+
+.btn-delete:hover { 
+    background-color: #fecaca; 
+}

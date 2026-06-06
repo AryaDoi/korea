@@ -1,0 +1,171 @@
+/* NAVBAR STYLING */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+
+/* Logo Warung RMB Gedein Dikit */
+.logo a { text-decoration: none; color: inherit; }
+.logo h1 { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 1.6rem; 
+    color: #111; 
+    margin: 0;
+    line-height: 1;
+}
+.logo span { 
+    font-size: 0.6rem; 
+    color: #aaa; 
+    letter-spacing: 4px; 
+    display: block; 
+    margin-top: 2px;
+    text-transform: uppercase;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.85rem;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+/* WRAPPER & CONTENT */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    padding: 20px;
+    margin-top: 100px; 
+}
+
+.check-container { margin-bottom: 20px; }
+.check-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #e8f5e9;
+    color: #4caf50;
+    font-size: 25px;
+    line-height: 60px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin: 0 0 15px 0;
+}
+
+.desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.qris-display img {
+    border: 1px solid #eee;
+    padding: 10px;
+    background: #fff;
+    border-radius: 8px;
+    width: 150px;
+}
+
+.qris-display p { font-size: 0.75rem; color: #999; margin: 10px 0 25px 0; }
+
+.info-card {
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 15px 25px;
+    margin-bottom: 30px;
+    background: #fff;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #fafafa;
+}
+
+.info-row:last-child { border-bottom: none; }
+.text-right { font-weight: 600; }
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn {
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-black { background: #111; color: #fff; }
+.btn-outline { background: #f5f5f5; color: #555; border: 1px solid #eee; }
+
+.footer-hint { margin-top: 30px; font-size: 1rem; color: #e54343; }
+
+/* Responsive */
+@media (max-width: 500px) {
+    .btn-group { flex-direction: column; }
+    .navbar { padding: 15px 20px; }
+    .nav-links { display: none; } 
+}
+
+/* --- EFEK RESPONSIF & UKURAN MENU NAVBAR HALAMAN SUKSES --- */
+.navbar-custom-link {
+    text-decoration: none !important; 
+    color: #666666 !important; 
+    font-size: 1.05rem !important; 
+    font-weight: 500 !important;
+    transition: color 0.2s ease !important; 
+}
+
+.navbar-custom-link:hover {
+    color: #000000 !important; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.main-title {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.main-title:hover {
+    opacity: 0.8;
+    transform: scale(1.02); 
+}
+

@@ -1,0 +1,409 @@
+/* CSS Reset & Variables */
+:root {
+    --primary-font: 'Inter', sans-serif;
+    --serif-font: 'Playfair Display', serif;
+    --text-dark: #1a1a1a;
+    --text-gray: #737373;
+    --text-light-gray: #a3a3a3;
+    --border-color: #e5e5e5;
+    --bg-right: #f9f9f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--primary-font);
+    color: var(--text-dark);
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    padding-top: 80px;
+}
+
+/* --- NAVBAR & SEARCH --- */
+.navbar {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    right: 0;
+    background: #ffffff;
+    /* Tambahkan garis pemisah abu-abu tipis di sini */
+    border-bottom: 1px solid #eeeeee; 
+    z-index: 1000;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: space-between; /* Membuat jarak otomatis */
+    padding: 15px 40px;
+}
+
+.nav-container {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo h1 {
+    font-family: var(--serif-font);
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    color: var(--text-light-gray);
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px; /* Sesuaikan jarak antar menu */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    padding-bottom: 0.3rem;
+    transition: color 0.2s;
+}
+
+.nav-links a.active {
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--text-dark);
+}
+
+.nav-links a:hover {
+    color: var(--text-dark);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-actions a {
+    text-decoration: none !important;
+    display: flex !important; 
+    align-items: center;
+}
+
+.search-bar {
+    position: relative;
+}
+
+.search-bar input {
+    padding: 0.7rem 1rem 0.7rem 2.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    font-family: var(--primary-font);
+    width: 250px;
+    outline: none;
+    color: var(--text-dark);
+}
+
+.search-bar input::placeholder {
+    color: #b3b3b3;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    fill: #b3b3b3;
+}
+
+.cart-btn {
+    /* Gunakan inline-flex agar tombol hanya selebar isinya */
+    display: inline-flex !important; 
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: row !important; 
+    gap: 10px !important;
+    
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    padding: 0 16px !important;
+    height: 42px !important;   
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none !important; 
+    transition: all 0.2s;
+    white-space: nowrap !important;
+}
+
+.cart-btn:hover {
+    background-color: #f9f9f9;
+}
+
+.cart-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0; 
+    display: flex;
+    align-items: center;
+    stroke: var(--text-dark);
+}
+
+.cart-text {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1;
+    margin: 0 !important;
+    display: inline-block !important;
+}
+
+.cart-badge {
+    background-color: var(--text-dark);
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    
+    /* Ukuran tetap */
+    width: 20px;
+    height: 20px;
+    
+    /* PENTING: Flexbox murni untuk centering */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    
+    /* Trik agar angka benar-benar di tengah */
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    line-height: 20px; 
+    vertical-align: middle;
+}
+
+/* --- MAIN LAYOUT --- */
+.hero-container {
+    display: flex;
+    flex: 1;
+}
+
+/* --- LEFT SIDE (HERO CONTENT) --- */
+.hero-left {
+    flex: 1.1;
+    padding: 5rem 6rem;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.eyebrow {
+    color: var(--text-light-gray);
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.headline {
+    font-family: var(--serif-font);
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+}
+
+.headline .italic-gray {
+    font-style: italic;
+    color: #b3b3b3;
+}
+
+.description {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: 90%;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+    font-family: var(--primary-font);
+}
+
+.btn-primary {
+    background-color: var(--text-dark);
+    color: #ffffff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #333;
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: #f5f5f5;
+}
+
+/* --- RIGHT SIDE (STATS & TAGS) --- */
+.hero-right {
+    flex: 1;
+    background-color: var(--bg-right);
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #ffffff;
+}
+
+.stat-item {
+    padding: 3.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-item:nth-child(1) {
+    border-bottom: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+}
+.stat-item:nth-child(2) {
+    border-bottom: 1px solid var(--border-color);
+}
+.stat-item:nth-child(3) {
+    border-right: 1px solid var(--border-color);
+}
+
+.stat-number {
+    font-family: var(--serif-font);
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+}
+
+.stat-label {
+    color: var(--text-light-gray);
+    font-size: 0.9rem;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.tag {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tag:hover {
+    border-color: var(--text-light-gray);
+    color: var(--text-dark);
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 1024px) {
+    .hero-container {
+        flex-direction: column;
+    }
+    .hero-left, .hero-right {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 3rem;
+    }
+    .headline { font-size: 3.5rem; }
+    .navbar { padding: 1rem 2rem; flex-wrap: wrap; gap: 1rem;}
+    .search-bar input { width: 100%; }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.main-title {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.main-title:hover {
+    opacity: 0.8;
+    transform: scale(1.02); 
+}
+
+/* Tombol Secret Admin */
+.admin-secret-btn {
+    background: black;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    text-decoration: none;
+    margin-left: -10px;
+    opacity: 0.05;
+    transition: opacity 0.3s;
+}
+
+.admin-secret-btn:hover {
+    opacity: 1;
+}

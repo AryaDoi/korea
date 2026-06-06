@@ -1,0 +1,397 @@
+:root {
+    --primary: #111;
+    --gray-bg: #f9f9f9;
+    --border: #eeeeee;
+    --text-gray: #888888;
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+/* --- ANIMASI HALAMAN --- */
+@keyframes pageEntryPoint {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #fff;
+    padding-top: 80px;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+    height: 90px; 
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Warung RMB Gedein Dikit */
+.logo a { text-decoration: none; color: inherit; }
+.logo h1 { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 1.6rem; 
+    color: #111; 
+    margin: 0;
+    line-height: 1;
+}
+.logo span { 
+    font-size: 0.6rem; 
+    color: #aaa; 
+    letter-spacing: 4px; 
+    display: block; 
+    margin-top: 2px;
+    text-transform: uppercase;
+}
+
+/* --- NAV MENU (AKTIF HITAM, SISANYA ABU) --- */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    flex-shrink: 0;
+}
+
+.nav-menu a {
+    text-decoration: none !important;
+    color: #aaa !important; 
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    padding: 8px 0;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+/* Garis bawah animasi */
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #111;
+    transition: width 0.3s ease;
+}
+
+/* Hover: Tulisan jadi hitam & garis muncul */
+.nav-menu a:hover {
+    color: #111 !important;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* State Aktif: Tulisan hitam & garis standby */
+.nav-menu a.active {
+    color: #111 !important;
+    font-weight: 700;
+}
+
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+/* --- FIX KERANJANG & SEARCH BIAR GAK NUMPUK --- */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+/* --- SEARCH BOX --- */
+.search-box {
+    background: #f4f4f4;
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 200px;
+    font-size: 0.9rem;
+}
+
+.search-box button { 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    color: #888; 
+}
+
+/* --- TOMBOL KERANJANG (VERSI KALEM) --- */
+.cart-btn {
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: #333;
+    min-width: fit-content;
+}
+
+.cart-btn:hover {
+    border-color: #333;
+    color: #000;
+    background: #fff;
+}
+
+.cart-icon {
+    display: flex;
+    align-items: center;
+}
+
+.cart-text {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.cart-badge {
+    background-color: #000;
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    line-height: 20px;
+    vertical-align: middle;
+}
+
+/* --- LAYOUT UTAMA --- */
+.katalog-container { 
+    display: flex;
+    width: 100%;
+}
+
+.katalog-sidebar { 
+    width: 280px; 
+    padding: 40px 20px; 
+    flex-shrink: 0; 
+    border-right: 1px solid var(--border); 
+}
+
+.sidebar-group { 
+    border: 1px solid var(--border); 
+    border-radius: 15px; 
+    padding: 10px; 
+}
+
+.sidebar-group h4 { 
+    font-size: 0.65rem; 
+    color: #bbb; 
+    letter-spacing: 2px; 
+    padding: 15px; 
+    text-transform: uppercase; 
+}
+
+.cat-list { 
+    list-style: none; 
+}
+
+.cat-link { 
+    display: block; 
+    padding: 12px 15px; 
+    text-decoration: none; 
+    color: var(--text-gray); 
+    font-weight: 600; 
+    font-size: 0.85rem; 
+    border-radius: 8px; 
+    transition: 0.2s; 
+}
+
+.cat-list li.active .cat-link { 
+    background: var(--gray-bg); 
+    color: var(--primary); 
+}
+
+/* --- GRID PRODUK --- */
+.katalog-main { 
+    flex: 1; 
+    padding: 0; 
+}
+
+.product-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+}
+
+.product-card { 
+   border-right: 1px solid var(--border); 
+    border-bottom: 1px solid var(--border); 
+    display: flex; 
+    flex-direction: column;
+}
+
+.product-card:hover { 
+    background-color: #fafafa; 
+}
+
+.card-image-area { 
+    background: var(--gray-bg); 
+    height: 250px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    position: relative; 
+    padding: 30px; 
+}
+
+.card-image-area img { 
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: contain; 
+}
+
+.badge { 
+    position: absolute; 
+    top: 15px; 
+    left: 15px; 
+    background: #fff; 
+    padding: 4px 12px; 
+    font-size: 0.6rem; 
+    font-weight: 800; 
+    border-radius: 4px; 
+    border: 1px solid var(--border); 
+}
+
+.card-info { 
+    padding: 25px; 
+}
+
+.cat-label { 
+    font-size: 0.6rem; 
+    color: #bbb; 
+    letter-spacing: 1px; 
+    display: block; 
+    margin-bottom: 8px; 
+}
+
+.product-title { 
+    font-size: 1.05rem; 
+    font-weight: 600; 
+    margin-bottom: 15px; 
+    color: #111; 
+}
+
+.price-row { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.price { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 1.3rem; 
+    font-weight: 800; 
+}
+
+.add-to-cart { 
+    width: 35px; 
+    height: 35px; 
+    background: var(--primary); 
+    color: #fff; 
+    border: none; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    font-size: 1.2rem; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+/* Styling Pesan Produk Tidak Ditemukan */
+.empty-search-container {
+    grid-column: 1 / -1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px; 
+    text-align: center;
+    width: 100%;
+}
+
+.empty-search-container img {
+    width: 150px; 
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.empty-search-container p {
+    font-size: 1.2rem;
+    color: #888;
+    font-weight: 500;
+}
+
+/* --- EFEK RESPONSIF MENU NAVBAR --- */
+.navbar-custom-link {
+    text-decoration: none !important; 
+    color: #666666 !important; 
+    font-weight: 500 !important;
+    transition: color 0.2s ease !important; 
+}
+
+.navbar-custom-link:hover {
+    color: #000000 !important; 
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+.main-title {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.main-title:hover {
+    opacity: 0.8;
+    transform: scale(1.02); 
+}
+
+body {
+    animation: smoothSlide ease 0.6s;
+}

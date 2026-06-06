@@ -1,0 +1,30 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: #333; background-color: #f9f9f9; }
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.container { max-width: 1000px; margin: 0 auto; padding: 24px; }
+.container h1 { font-size: 28px; margin-bottom: 24px; }
+.empty-state { background: white; padding: 48px 24px; border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.empty-state p { font-size: 18px; color: #666; margin-bottom: 24px; }
+.btn { display: inline-block; padding: 12px 24px; border: none; border-radius: 6px; text-decoration: none; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+.btn-primary { background: #667eea; color: white; }
+.btn-primary:hover { background: #5568d3; }
+.cart-table { width: 100%; background: white; border-collapse: collapse; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 24px; }
+.cart-table thead { background: #667eea; color: white; }
+.cart-table th { padding: 16px; text-align: left; font-weight: 600; }
+.cart-table td { padding: 16px; border-bottom: 1px solid #e9ecef; }
+.item-info { display: flex; align-items: center; gap: 12px; }
+.item-info img { width: 50px; height: 50px; object-fit: cover; border-radius: 6px; }
+.qty-control { display: flex; gap: 8px; align-items: center; }
+.qty-control button { width: 32px; height: 32px; border: 1px solid #ddd; background: white; cursor: pointer; border-radius: 4px; }
+.qty-control input { width: 40px; text-align: center; border: 1px solid #ddd; padding: 4px; border-radius: 4px; }
+.btn-danger { background: #ff6b6b; color: white; padding: 8px 12px; font-size: 12px; }
+.btn-danger:hover { background: #ff5252; }
+.cart-summary { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 400px; margin-left: auto; }
+.summary-row { display: flex; justify-content: space-between; margin-bottom: 12px; }
+.summary-row.total { border-top: 2px solid #667eea; padding-top: 12px; font-weight: 700; font-size: 18px; }
+.btn-large { width: 100%; margin-top: 24px; padding: 12px; }
+footer { background: #1a1a1a; color: white; text-align: center; padding: 24px; margin-top: 40px; }
+@media (max-width: 768px) {
+  .cart-table { font-size: 14px; }
+  .cart-table th, .cart-table td { padding: 8px; }
+}

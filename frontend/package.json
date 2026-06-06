@@ -1,0 +1,10 @@
+{
+  "name": "warung-rmb-pages",
+  "version": "1.0.0",
+  "description": "Warung RMB Pages - Cloudflare Pages Frontend",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler pages dev ./src",
+    "deploy": "wrangler pages deploy ./src"
+  }
+}

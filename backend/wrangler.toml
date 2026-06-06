@@ -1,0 +1,45 @@
+name = "warung-rmb-api"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+node_compat = true
+
+account_id = ""
+workers_dev = true
+
+# KV Namespaces for Session Management
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = ""
+preview_id = ""
+
+# D1 Database Binding
+[[d1_databases]]
+binding = "DB"
+database_name = "warung-rmb"
+database_id = ""
+
+# D1 Database Bindings for Development/Preview
+[[d1_databases]]
+binding = "DB_PREVIEW"
+database_name = "warung-rmb-preview"
+database_id = ""
+preview = true
+
+[env.production]
+name = "warung-rmb-api-prod"
+routes = [
+  { pattern = "api.warung-rmb.com/*", zone_name = "warung-rmb.com" }
+]
+
+[env.development]
+name = "warung-rmb-api-dev"
+
+[env.production.vars]
+API_URL = "https://api.warung-rmb.com"
+CORS_ORIGIN = "https://warung-rmb.com"
+SESSION_TIMEOUT = "3600"
+
+[env.development.vars]
+API_URL = "http://localhost:8787"
+CORS_ORIGIN = "http://localhost:3000"
+SESSION_TIMEOUT = "3600"

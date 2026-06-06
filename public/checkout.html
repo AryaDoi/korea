@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Warung RMB</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/checkout.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="/index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 16px;">
+            <img src="/images/logo.png" alt="Logo Warung RMB" style="height: 75px; width: auto; display: block; object-fit: contain;">
+            <div class="logo-text">
+                <h1 style="margin: 0; line-height: 1.2;">Warung RMB</h1>
+            </div>
+        </a>
+    </header>
+
+    <div class="container">
+        <div class="checkout-wrapper">
+            <div class="checkout-form">
+                <h1>Data Penerima</h1>
+                
+                <form id="checkout-form">
+                    <div class="form-group">
+                        <label for="nama_depan">Nama Lengkap</label>
+                        <input type="text" id="nama_depan" name="nama_depan" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alamat">Alamat</label>
+                        <input type="text" id="alamat" name="alamat" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="kota">Kota</label>
+                            <input type="text" id="kota" name="kota" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="provinsi">Provinsi</label>
+                            <input type="text" id="provinsi" name="provinsi" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="kodepos">Kode Pos</label>
+                        <input type="text" id="kodepos" name="kodepos">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="whatsapp">Nomor WhatsApp</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">Selesaikan Pesanan</button>
+                </form>
+            </div>
+
+            <div class="checkout-summary">
+                <h2>Ringkasan Pesanan</h2>
+                <div id="order-items">
+                    <!-- Items will be loaded here -->
+                </div>
+
+                <div class="summary">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="summary-subtotal">Rp 0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Ongkir:</span>
+                        <span id="summary-ongkir">Rp 5.000</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="summary-total">Rp 0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Warung RMB. All rights reserved.</p>
+    </footer>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/checkout.js"></script>
+</body>
+</html>

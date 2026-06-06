@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warung RMB - Jastip Indonesia Korea</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="javascript:void(0)" class="admin-secret-btn"></a>
+        <a href="/index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 16px;">
+            <img src="/images/logo.png" alt="Logo Warung RMB" style="height: 75px; width: auto; display: block; object-fit: contain;">
+            <div class="logo-text">
+                <h1 style="margin: 0; line-height: 1.2;">Warung RMB</h1>
+                <span style="font-size: 10px; letter-spacing: 1px;">RAMAH · MURAH · BERKAH</span>
+            </div>
+        </a>
+
+        <nav class="nav-links">
+            <a href="/katalog.html">Katalog</a>
+            <a href="https://wa.me/+821043282503" target="_blank">Hubungi Kami</a>
+        </nav>
+        
+        <div class="nav-actions">
+            <a href="/keranjang.html" class="cart-btn">
+                <svg class="cart-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <span class="cart-count" id="cart-count">0</span>
+            </a>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Jastip Terpercaya ke Korea</h2>
+                <p>Belanja produk Korea favorit dengan harga yang ramah di kantong</p>
+                <a href="/katalog.html" class="cta-button">Mulai Belanja</a>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="statistics">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <h3 id="stat-products">0</h3>
+                    <p>Produk</p>
+                </div>
+                <div class="stat-item">
+                    <h3 id="stat-categories">0</h3>
+                    <p>Kategori</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Terpercaya</h3>
+                    <p>Layanan Terbaik</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured-products">
+            <h2>Produk Unggulan</h2>
+            <div class="products-grid" id="featured-products">
+                <!-- Products will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Warung RMB. All rights reserved.</p>
+    </footer>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+name = "warung-rmb"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+account_id = ""  # Set your Cloudflare account ID
+workers_dev = true
+
+[env.production]
+name = "warung-rmb-prod"
+routes = [
+  { pattern = "api.warung-rmb.com/*", zone_name = "warung-rmb.com" }
+]
+
+[env.development]
+name = "warung-rmb-dev"
+
+# KV Namespaces for sessions
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = ""  # Set your KV namespace ID
+preview_id = ""  # Set your preview KV namespace ID
+
+# D1 Database (if using Cloudflare D1)
+[[d1_databases]]
+binding = "DB"
+database_name = "warung-rmb"
+database_id = ""
+
+# Environment Variables
+[env.production.vars]
+API_URL = "https://api.warung-rmb.com"
+CORS_ORIGIN = "https://warung-rmb.com"
+SESSION_TIMEOUT = "3600"
+
+[env.development.vars]
+API_URL = "http://localhost:8787"
+CORS_ORIGIN = "http://localhost:5173"
+SESSION_TIMEOUT = "3600"
+
+# Secrets (set via CLI: wrangler secret put)
+# SESSION_SECRET
+# ADMIN_HASH_SALT

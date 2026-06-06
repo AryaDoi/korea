@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog - Warung RMB</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/katalog.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="/index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 16px;">
+            <img src="/images/logo.png" alt="Logo Warung RMB" style="height: 75px; width: auto; display: block; object-fit: contain;">
+            <div class="logo-text">
+                <h1 style="margin: 0; line-height: 1.2;">Warung RMB</h1>
+            </div>
+        </a>
+
+        <nav class="nav-links">
+            <a href="/index.html">Beranda</a>
+            <a href="https://wa.me/+821043282503" target="_blank">Hubungi Kami</a>
+        </nav>
+        
+        <div class="nav-actions">
+            <a href="/keranjang.html" class="cart-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                </svg>
+                <span class="cart-count" id="cart-count">0</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Kategori</h3>
+            <div id="categories-list">
+                <!-- Categories will be loaded here -->
+            </div>
+
+            <h3 style="margin-top: 20px;">Cari Produk</h3>
+            <input type="text" id="search-input" placeholder="Cari nama produk...">
+            <button id="search-btn">Cari</button>
+        </aside>
+
+        <main class="main-content">
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be loaded here -->
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Warung RMB. All rights reserved.</p>
+    </footer>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/katalog.js"></script>
+</body>
+</html>

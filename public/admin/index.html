@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - Warung RMB</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/index_admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <nav class="admin-nav">
+            <div class="nav-header">
+                <h2>Warung RMB Admin</h2>
+            </div>
+            <ul>
+                <li><a href="/admin/index.html" class="active">Dashboard</a></li>
+                <li><a href="/admin/products.html">Produk</a></li>
+                <li><a href="/admin/orders.html">Pesanan</a></li>
+                <li><a href="javascript:void(0)" onclick="logout()">Logout</a></li>
+            </ul>
+        </nav>
+
+        <div class="admin-content">
+            <header class="admin-header">
+                <h1>Dashboard</h1>
+                <div id="admin-user-info"></div>
+            </header>
+
+            <main class="admin-main">
+                <section class="stats-grid">
+                    <div class="stat-card highlight">
+                        <h3 id="total-revenue">Rp 0</h3>
+                        <p>Total Pendapatan</p>
+                    </div>
+                </section>
+
+                <section class="order-section">
+                    <h2>Pesanan Terbaru</h2>
+                    
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Cari pesanan...">
+                        <button id="search-btn">Cari</button>
+                    </div>
+
+                    <table class="order-table">
+                        <thead>
+                            <tr>
+                                <th>ID Pesanan</th>
+                                <th>Penerima</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Tanggal</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-tbody">
+                            <tr><td colspan="6">Memuat...</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/edit_admin.js"></script>
+</body>
+</html>

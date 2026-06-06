@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sukses - Warung RMB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/sucsess.css">
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-box">
+            <div class="success-icon">✓</div>
+            <h1>Pesanan Berhasil!</h1>
+            <p>Terima kasih telah berbelanja di Warung RMB</p>
+            <div class="order-info">
+                <div class="info-row"><span class="label">No. Pesanan:</span><span class="value" id="order-id">-</span></div>
+                <div class="info-row"><span class="label">Total:</span><span class="value" id="order-total">-</span></div>
+                <div class="info-row"><span class="label">Status:</span><span class="value" id="order-status">Pending</span></div>
+            </div>
+            <div class="instructions">
+                <h3>Langkah Selanjutnya:</h3>
+                <ol>
+                    <li>Tunggu konfirmasi dari pihak Warung RMB melalui WhatsApp</li>
+                    <li>Lakukan pembayaran sesuai instruksi yang diberikan</li>
+                    <li>Pesanan akan diproses setelah pembayaran terverifikasi</li>
+                </ol>
+            </div>
+            <div class="actions">
+                <a href="/index.html" class="btn btn-primary">Kembali ke Beranda</a>
+                <a href="/katalog.html" class="btn btn-secondary">Belanja Lagi</a>
+            </div>
+        </div>
+    </div>
+    <script src="/js/api.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const params = new URLSearchParams(window.location.search);
+            const orderId = params.get('order_id');
+            if (orderId) {
+                try {
+                    const response = await api.getOrder(orderId);
+                    const order = response.data;
+                    document.getElementById('order-id').textContent = order.id_pesanan;
+                    document.getElementById('order-total').textContent = formatCurrency(order.total_bayar);
+                    document.getElementById('order-status').textContent = order.status_pesanan;
+                } catch (error) {
+                    console.error('Error loading order:', error);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
